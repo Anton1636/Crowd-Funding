@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Web3Modal from 'web3modal'
 import { ethers } from 'ethers'
-import { CrowdFundingABI, CrowdFundingAddress } from './context'
+import { CrowdFundingABI, CrowdFundingAddress } from './constants'
 
 const fetchContract = signerOfProvider =>
 	new ethers.Contract(CrowdFundingAddress, CrowdFundingABI, signerOfProvider)
@@ -19,7 +19,6 @@ export const CrowdFundingProvider = ({ children }) => {
 		const provider = new ethers.providers.Web3Provider(connection)
 		const signer = provider.getSigner()
 		const contract = fetchContract(signer)
-		console.log(currentAccount)
 
 		try {
 			const transaction = await contract.createCampaign(

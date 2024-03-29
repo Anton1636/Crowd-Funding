@@ -12,12 +12,12 @@ const index = () => {
 		getDonations,
 	} = useContext(CrowdFundingContext)
 
+	const [allCampaign, setAllCampaign] = useState()
+	const [userCampaign, setUserCampaign] = useState()
+
 	useEffect(() => {
 		const getCampaignsData = getCampaigns()
 		const userCampaignsData = getUserCampaigns()
-
-		const [allCampaign, setAllCampaign] = useState()
-		const [userCampaign, setUserCampaign] = useState()
 
 		return async () => {
 			const allData = await getCampaignsData
