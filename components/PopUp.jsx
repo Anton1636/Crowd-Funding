@@ -20,7 +20,7 @@ const PopUp = ({ setOpenModel, donate, donateFunction, getDonations }) => {
 			const donationData = await donationListData
 			setAllDonationData(donationData)
 		}
-	})
+	}, [])
 
 	return (
 		<>

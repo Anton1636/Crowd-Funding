@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Hero = () => {
+const Hero = ({ titleData, createCampaign }) => {
 	const [campaign, setCampaign] = useState({
 		title: '',
 		description: '',
@@ -9,8 +9,9 @@ const Hero = () => {
 	})
 
 	const createNewCampaign = async e => {
+		e.preventDefault()
 		try {
-			const data = await createNewCampaign(campaign)
+			const data = await createCampaign(campaign)
 		} catch (e) {
 			console.log(e)
 		}

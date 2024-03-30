@@ -6,7 +6,7 @@ const index = () => {
 	const {
 		titleData,
 		getCampaigns,
-		creteCampaign,
+		createCampaign,
 		donate,
 		getUserCampaigns,
 		getDonations,
@@ -30,11 +30,9 @@ const index = () => {
 	const [openModel, setOpenModel] = useState(false)
 	const [donateCampaign, setDonateCampaign] = useState()
 
-	console.log(donateCampaign)
-
 	return (
 		<>
-			<Hero titleData={titleData} creteCampaign={creteCampaign} />
+			<Hero titleData={titleData} createCampaign={createCampaign} />
 			<Card
 				title='All Listed Campaign'
 				allCampaign={allCampaign}
